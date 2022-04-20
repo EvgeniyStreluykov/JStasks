@@ -1,21 +1,33 @@
 //=============переменные=============//
 
 // const number = prompt('Угадай число', '');
-// if (number == 10) alert ('Верно');
-// else alert('Неверно');
+//   if (number == 10) {
+//     alert('Верно');
+//   } else {
+//     alert('Неверно');
+//   }
 
-// let min = prompt('Который час?', '');
-// let message = (min < 0) ? 'минуты не могут быть отрицательные :)' :
-//   (min < 15) ? 'первая четверть часа' :
-//   (min < 30) ? 'вторая четверть часа' :
-//   (min < 45) ? 'третья четверть часа' :
-//   (min < 60) ? 'четвертая четверть часа' :
-//   'в часу 60 минут :)' ;
-// alert(message);
+// let min = prompt ('Который час?', '');
+//   if (min < 0) {
+//     alert('минуты не могут быть отрицательные');
+//   } else if (min < 15) {
+//     alert('первая четверть часа');
+//   } else if (min < 30) {
+//     alert('вторая четверть часа');
+//   } else if (min < 45) {
+//     alert('третья четверть часа')
+//   } else if (min < 60) {
+//     alert('четвертая четверть часа');
+//   } else {
+//     alert('в часу 60 минут');
+//   }
 
 // let a = prompt('Впиши число', '');
-// let message = (a > 0) ? 'try' :
-//   'false';
+
+// let message = a > 0
+//   ? 'try'
+//   : 'false';
+
 // alert(message);
 
 //=======Логическиче операторы=======//
@@ -26,8 +38,8 @@
 // alert(message);
 
 // let a = prompt('Впиши число', '');
-//   let message = (a == 0) || (a == 2) ? (+a + 7) :
-//   (+a / 10) ;
+//   let message = a === 0 || a === 2 ? +a + 7
+//   : (+a / 10) ;
 // alert(message);
 
 // let a = prompt('Переменная "a"','');
@@ -49,7 +61,7 @@
 //   console.log(num);
 //   num++;
 // }
-// for (let i = 1; i <= 50; i++){
+// for (let i = 1; i <= 50; i++) {
 //   document.write(i + '<br>');
 // }//тоже самое до 100 :)//
 
@@ -68,7 +80,7 @@
 // function sumTo(n) {
 //   return n * (n + 1)/2;
 // }
-// alert( sumTo(100));
+// alert ( sumTo(100));
 
 // let n = 1000;
 // while (n > 50) {
@@ -230,7 +242,7 @@
 //   Pete: 130,
 // };
 // let sum = 0;
-// for(let key in salaries){
+// for(let key in salaries) {
 //   sum += (salaries[key]);
 // }
 // console.log(sum);
@@ -242,10 +254,10 @@
 //   title: "My menu",
 // };
 // console.log(menu);
-// myltiplyNumeric(menu);
-// function myltiplyNumeric(obj) {
-//   for(let key in obj) {
-//     if(typeof obj[key] == 'number'){
+// multiplyNumeric(menu);
+// function multiplyNumeric(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] === 'number') {
 //       obj[key] *= 2;
 //     }
 //   }
@@ -262,7 +274,7 @@
 //   id: 5,
 //   token: 12343423,
 // };
-// let keys = object.keys(obj);
+// let keys = Object.keys(obj);
 // console.log(obj[keys[0]]);
 
 // const obj = {
@@ -281,29 +293,42 @@
 // let key = "id";
 // console.log(obj[key]);
 
-let city1 = {};
-  city1.name = "ГородN";
-  city1.population = 1e7;
+// const obj = {
+//   id: 5,
+//   token: 12343423,
+// };
+// const {id, ...rest} = obj;
+// console.log(id);
 
-let city2 = {
-  name: "ГородM",
-  population: 1e6,
-};
+// let city1 = {};
+//   city1.name = "ГородN";
+//   city1.population = 1e7;
 
-function getName() { return this.name; }
-  city1.getName = getName;
-  city2.getName = getName;
+// let city2 = {
+//   name: "ГородM",
+//   population: 1e6,
+// };
 
-function exportStr() { 
-  return `name=${this.name}\npopulation=${this.population}\n`; }
-city1.exportStr = exportStr;
-city2.exportStr = exportStr;
-console.log(city1.exportStr());
-console.log(city2.exportStr());
+// function getName() { return this.name;}
+//   city1.getName = getName;
+//   city2.getName = getName;
 
-function getObj() { return this; }
- function getCity() { return getObj.apply(this).getName(); }
-city1.getCity = getObj;
-city2.getCity = getObj;
-console.log(city1.getCity());
-console.log(city2.getCity());
+// function exportStr() { 
+//   return `name=${this.name}\npopulation=${this.population}\n`;
+// }
+
+// city1.exportStr = exportStr;
+// city2.exportStr = exportStr;
+
+// console.log(city1.exportStr());
+// console.log(city2.exportStr());
+
+// function getObj() { return this; }
+// function getCity() { return getObj.apply(this).getName();
+// }
+
+// city1.getCity = getObj;
+// city2.getCity = getObj;
+
+// console.log(city1.getCity());
+// console.log(city2.getCity());
