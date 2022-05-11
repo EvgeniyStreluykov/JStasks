@@ -332,3 +332,427 @@
 
 // console.log(city1.getCity());
 // console.log(city2.getCity());
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// function Calculator() {
+
+// this.read = function() {
+//   this.a = +prompt('Введите значение "a"', 0);
+//   this.b = +prompt('Введите значение "b"', 0);
+// };
+
+//   this.sum = function() {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function() {
+//     return this.a * this.b;
+//   }
+// }
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+// let accumulator = new Accumulator(7);
+// accumulator.read();
+
+// function Accumulator(startingValue) {
+//   this.value = startingValue;
+
+//   this.read = function(){
+//     this.value += +prompt('Прибавь число', '');
+//   };
+// }
+
+// alert(accumulator.value);
+
+// function Person(first, last, age, eye) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.age = age;
+//   this.eyeColor = eye;
+// }
+
+// let myFather = new Person("Стрелюков", "Михаил", 56, "Голубой");
+
+// console.log("Моему отцу " + myFather.age + ".");
+
+// function ucFirst(str) {
+//   if (!str) return str;
+
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+
+// alert(ucFirst("вася"));
+
+// let style = [" Джаз" , " Блюз"];
+
+// style.push (" Рок-н-ролл");
+
+// style[1] = " Классика";
+// alert(style);
+
+// alert(style.shift([1]));
+
+// style.unshift(" Реп", " Регги");
+// alert(style);
+
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// alert( unique(values) ); // Hare,Krishna,:-O
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250,
+// };
+
+// function sumSalaries(salaries) {
+//   let sum = 0;
+//   for (let salary of Object.values(salaries)) {
+//     sum += salary;
+//   }
+
+//   return sum;
+// }
+
+// alert(sumSalaries(salaries));
+
+// let user = {
+//   name: 'John',
+//   age: 30
+//   };
+
+// function count(obj) {
+//   return Object.keys(obj).length;
+// }
+
+// console.log(count(user));
+
+// let arr = ["Vasya", "Petrovich"];
+
+// let [firstName, surname] = arr;
+
+// alert(firstName);
+
+//task 1;
+// const func = (a, b) => a === b;
+
+// console.log(func(2, 2));
+
+//task 2;
+// const func = (a, b) => a + b > 10;
+
+// console.log(func(2, 2));
+
+//task 3;
+// const func = (a) => a < 0;
+
+// console.log(func(-1));
+
+//task 4;
+// let str = '';
+
+// for(let i = 1; i <=9 ; i++) {
+//   str = str + i;
+// }
+
+// console.log(str);
+
+//task 5;
+// let str = "";
+
+// for(i = 0; i < 20; i++) {
+// console.log(str += "x")
+// }
+
+// task 6;
+// for (let i = 1; i <= 9; i++) {
+//   let str = '';
+
+//   for (let j = 1; j <= i; j++) {
+//     str = str + i;
+//   }
+//   console.log(str);
+// }
+
+// task 7;
+// let str = "";
+
+// for(i = 0; i<5; i++){
+//   console.log(str += "xx")
+// }
+
+// task 8;
+// for(i = 1; i <= 9; i++) {
+//   str = '';
+
+//   for(j = 1; j <= 3; j++){
+//     str = str + i;
+//   }
+//   console.log(str);
+// }
+
+// Array tasks 1;
+// const array1 =['a', 'b', 'c'];
+// const array2 = [1, 2, 3];
+// console.log(array1.concat(array2));
+
+// const array3 = [...array1, ...array2];
+// console.log(array3);
+
+// Array tasks 2;
+// const array = ['a', 'b', 'c'];
+// array.push(1, 2, 3);
+
+// console.log(array);
+
+// Array tasks 3;
+// const array = [1, 2, 3, 4, 5];
+// array.splice(1, 2);
+
+// console.log(array);
+
+// Array tasks 4;
+// const array = [1, 2, 3, 4, 5];
+// const removed = array.splice(1, 3);
+
+// console.log(removed);
+
+// Array tasks 5;
+// const array = [1, 2, 3, 4, 5];
+// array.splice(2, 0, 'a', 'b', 'c');
+
+// console.log(array);
+
+// Array tasks 6;
+// const array = [1, 2, 3, 4, 5];
+// array.splice(1, 0, 'a', 'b'), array.splice(6, 0, 'c'), array.splice(8, 0, 'e');
+
+// console.log(array);
+
+// Array tasks 7;
+// const array = [3, 4, 1, 2, 7];
+
+// console.log(array.sort());
+
+// // Array tasks 8;
+// const obj = {
+//   js: 'test',
+//   jq: 'hello',
+//   css: 'world',
+// };
+
+// console.log(Object.keys(obj));
+
+// Array tasks 9;
+// const str = '123456';
+// revStr = str.split('').reverse().join('');
+// console.log(revStr);
+
+// Array tasks 10/11;
+// const veb = 'https://docs.google.com/';
+// const str = 'index.html';
+
+// console.log(veb.indexOf('https://'));
+// console.log(str.lastIndexOf('.html'));
+
+// Array tasks 12;
+// const array = [1, 2, 3, 4, 5];
+
+// console.log(array.includes(5));
+
+// Array tasks 13;
+// let num = 31;
+// let result = false;
+// for(i = 2; i < num; i++) { 
+//   if(num % i == 0){
+//   result = true;
+//   break; 
+//   }
+// }
+// if(result == true) {
+//   console.log('true')
+// } else {
+//   console.log('false')
+// }
+
+// Array tasks 14;
+// let num = [1, 2, 3,2, 4, 5];
+// let result = false;
+//   for (let i = 1; i < num.length; i++) {
+//     if (num[i] == num[i+1]) {
+//     result = true;
+//     break;
+//     }
+//   }
+
+//   if (result == true) {
+//   console.log('yes');
+//   } else {
+//   console.log('no');
+//   }
+
+// Array tasks 15;
+// const arr = [];
+//   for (i = 1; i <= 9; i++) {
+//     str = '';
+//     for (j = 0; j < i; j++) {
+//       str += i;
+//     }
+//     arr.push(str);
+//   }
+// console.log(arr);
+
+// Function tasks 1;
+// function arrayFill(value, length) {
+//   let arr = [];
+//   for(i = 0; i < length; i++) {
+//     arr.push(value);
+//   }
+//   return arr;
+// }
+// const data = 3;
+// const valueToFill = 'a';
+// console.log(arrayFill(valueToFill, data));
+
+// Function tasks 2;
+// const data = [1, 2, 3];
+// const result = [];
+// for(i = data.length - 1; i >= 0; --i) {
+//   result.push(data[i]);
+// }
+// console.log(result);
+
+// // Function tasks 3;
+// const data = [0, 1, false, 2, undefined, '', 3, null];
+
+// function compact(arr) {
+//   return arr.filter(function(a) { 
+//     return a;
+//   });
+// }
+
+// console.log(compact(data));
+
+// Function tasks 4;
+// const data = [['a', 1], ['b', 2]];
+// const fromPairs = array => {
+// const obj = {};
+// for(i = 0; i < array.length; i++) {
+//   obj[array[i][0]] = array[i][1];
+// }
+// return obj;
+// };
+// console.log(fromPairs(data));
+
+// Function tasks 5;
+// const data = [1,2,3,2,1]
+// const without = (arr, ...args) => arr.filter((el) => !args.includes(el)); 
+// console.log(without(data, 3, 1));
+
+// Function tasks 6;
+// const data = [1, 2, 1, 2, 3];
+// function unique () {return data.filter((e,i,a) => a.indexOf(e) == i)}
+
+// console.log(unique(data));
+
+// Function tasks 7;
+// const arr1 = [1, 2, 3, 4];
+// const arr2 = [1, 2, 3, 4];
+// const arr3 = [1, 2, 3, 5];
+// const arr4 = [1, 2, 3, 4, 5];
+
+// let isEqual = (arr1, arr2) => arr1.length === arr2.length && arr1.sort().every(function(value, index) { return value === arr2.sort()[index]});
+
+// console.log(isEqual(arr1, arr2));
+// console.log(isEqual(arr1, arr3));
+// console.log(isEqual(arr1, arr4));
+
+// Function tasks 8;
+// const data = [1, 2, 3, 4, 5, 6, 7]; 
+// const size = 3;
+// const chunk = (data, size) => {
+//   const arr = [];
+//   let index = 0;
+//   while (index < data.length) {
+//     arr.push(data.slice(index, size + index));
+//     index += size;
+//   }
+//   return arr;
+// };
+
+// console.log(chunk(data, 2));
+// console.log(chunk(data, 3));
+
+// Function tasks 9;
+// let arr = [[1, 2, 3], [4, 8], [7]];
+// let sum = 0;
+// for(i = 0; i < arr.length; i++) {
+//   for(j = 0; j < arr[i].length; j++) {
+//     sum += arr[i][j];
+//   }
+// }
+// console.log(sum);
+
+//перечитал теорию, придумал полегче решение:)
+// let arr = [[1, 2, 3], [4, 5], [7]];
+// let result = arr.flat() .reduce((sum, current) => sum + current);
+// console.log(result);
+
+// Function tasks 10;
+// const arr = [1, 4, 0, -2, 3, -1];
+// let isPositive = num => num >= 0;
+// let newArr = [];
+// for(i = 0; i <= arr.length; i++) {
+//   if(isPositive(arr[i])) {
+//     newArr.push(arr[i]);
+//   }
+// }
+// console.log(newArr);
+
+// Function tasks 11;
+// function getDigitsSum(num) {
+// let str = String(num);
+// let sum = 0;
+// for (let i = 0; i < str.length; i++) {
+//   sum += Number(str[i]);
+// }
+// return sum;
+// }
+
+// console.log(getDigitsSum(123));
+
+// Function tasks 12;
+// let ucFirst = str => str[0].toUpperCase() + str.slice(1);
+
+// console.log(ucFirst('kathrynowy'));
+
+// Recursion tasks 1;
+
+// Recursion tasks 2;
+// let arr = [12, 23, 34, 45]
+// function numArray(i) {
+//   console.log(arr[i++]);
+//   if(i < arr.length) {
+//     numArray(i);
+//   }
+// }
+// numArray(0);
+
+// Recursion tasks 3;
+// var num = 12325;
+// function resultSum(num) {
+//     if (num === 0) return 0;
+//     return num % 9;
+// }
+
+// console.log(resultSum(num));
