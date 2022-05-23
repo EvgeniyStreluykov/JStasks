@@ -454,7 +454,7 @@
 // console.log(func(2, 2));
 
 //task 3;
-// const func = (a) => a < 0;
+// const func = a => a < 0;
 
 // console.log(func(-1));
 
@@ -462,7 +462,7 @@
 // let str = '';
 
 // for(let i = 1; i <=9 ; i++) {
-//   str = str + i;
+//   str += i;
 // }
 
 // console.log(str);
@@ -487,7 +487,7 @@
 // task 7;
 // let str = "";
 
-// for(i = 0; i<5; i++){
+// for(i = 0; i < 5; i++){
 //   console.log(str += "xx")
 // }
 
@@ -535,7 +535,9 @@
 
 // Array tasks 6;
 // const array = [1, 2, 3, 4, 5];
-// array.splice(1, 0, 'a', 'b'), array.splice(6, 0, 'c'), array.splice(8, 0, 'e');
+// array.splice(1, 0, 'a', 'b');
+// array.splice(6, 0, 'c');
+// array.splice(8, 0, 'e');
 
 // console.log(array);
 
@@ -562,8 +564,8 @@
 // const veb = 'https://docs.google.com/';
 // const str = 'index.html';
 
-// console.log(veb.indexOf('https://'));
-// console.log(str.lastIndexOf('.html'));
+// console.log(veb.startsWith("https:") ? "yes" : "no");
+// console.log(str.endsWith(".html") ? "yes" : "no");
 
 // Array tasks 12;
 // const array = [1, 2, 3, 4, 5];
@@ -572,34 +574,30 @@
 
 // Array tasks 13;
 // let num = 31;
-// let result = false;
+// let result = true;
+
 // for(i = 2; i < num; i++) { 
-//   if(num % i == 0){
-//   result = true;
+//   if (num % i === 0) {
+//   result = false;
+
 //   break; 
 //   }
 // }
-// if(result == true) {
-//   console.log('true')
-// } else {
-//   console.log('false')
-// }
+// console.log(result);
+
 
 // Array tasks 14;
-// let num = [1, 2, 3,2, 4, 5];
-// let result = false;
+// let num = [1, 2, 3, 2, 4, 5];
+// let result = true;
+
 //   for (let i = 1; i < num.length; i++) {
-//     if (num[i] == num[i+1]) {
-//     result = true;
+//     if (num[i] === num[i+1]) {
+//     result = false;
+
 //     break;
 //     }
 //   }
-
-//   if (result == true) {
-//   console.log('yes');
-//   } else {
-//   console.log('no');
-//   }
+// console.log(result);
 
 // Array tasks 15;
 // const arr = [];
@@ -635,23 +633,19 @@
 // // Function tasks 3;
 // const data = [0, 1, false, 2, undefined, '', 3, null];
 
-// function compact(arr) {
-//   return arr.filter(function(a) { 
-//     return a;
-//   });
-// }
+// let compact = arr => arr.filter(a => a);
 
 // console.log(compact(data));
 
 // Function tasks 4;
 // const data = [['a', 1], ['b', 2]];
-// const fromPairs = array => {
-// const obj = {};
-// for(i = 0; i < array.length; i++) {
-//   obj[array[i][0]] = array[i][1];
-// }
-// return obj;
-// };
+
+// let fromPairs = (array) => array.reduce((obj, current) => {
+//   obj[current[0]] = current[1];
+
+//   return obj;
+// },{});
+
 // console.log(fromPairs(data));
 
 // Function tasks 5;
@@ -661,8 +655,9 @@
 
 // Function tasks 6;
 // const data = [1, 2, 1, 2, 3];
-// function unique () {return data.filter((e,i,a) => a.indexOf(e) == i)}
-
+// let unique = arr => {
+//   return Array.from(new Set(arr));
+// }
 // console.log(unique(data));
 
 // Function tasks 7;
@@ -671,7 +666,13 @@
 // const arr3 = [1, 2, 3, 5];
 // const arr4 = [1, 2, 3, 4, 5];
 
-// let isEqual = (arr1, arr2) => arr1.length === arr2.length && arr1.sort().every(function(value, index) { return value === arr2.sort()[index]});
+// let isEqual = (arr1, arr2) => {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+//   let result = arr1.map((value, index) => arr2[index] === value);
+//   return !result.includes(false);
+// };
 
 // console.log(isEqual(arr1, arr2));
 // console.log(isEqual(arr1, arr3));
@@ -705,38 +706,75 @@
 
 //перечитал теорию, придумал полегче решение:)
 // let arr = [[1, 2, 3], [4, 5], [7]];
-// let result = arr.flat() .reduce((sum, current) => sum + current);
+// let result = arr.flat().reduce((sum, current) => sum + current);
 // console.log(result);
 
 // Function tasks 10;
-// const arr = [1, 4, 0, -2, 3, -1];
-// let isPositive = num => num >= 0;
-// let newArr = [];
-// for(i = 0; i <= arr.length; i++) {
-//   if(isPositive(arr[i])) {
-//     newArr.push(arr[i]);
-//   }
-// }
-// console.log(newArr);
+// const array = [1, 4, 0, -2, 3, -1];
+
+// let isPositive = arr => {
+//   return arr.filter(index => index >= 0);
+// };
+
+// console.log(isPositive(array));
 
 // Function tasks 11;
 // function getDigitsSum(num) {
 // let str = String(num);
 // let sum = 0;
 // for (let i = 0; i < str.length; i++) {
-//   sum += Number(str[i]);
+//   sum += +str[i];
 // }
+
 // return sum;
 // }
 
 // console.log(getDigitsSum(123));
 
 // Function tasks 12;
-// let ucFirst = str => str[0].toUpperCase() + str.slice(1);
+// String.prototype.ucFirst = function() {
+//   return this.charAt(0).toUpperCase() + this.slice(1);
+// }
 
-// console.log(ucFirst('kathrynowy'));
+// let str = 'hello, kathry, how are you?';
+// let arr = str.split(' ');
+// let result = '';
+// for(i = 0; i < arr.length; i++) {
+//   if(i == arr.length) {
+//     result += arr[i].ucFirst()
+//   } else {
+//     result += arr[i].ucFirst() + ' '
+//   }
+// }
+// console.log(result);
+
+//не уверен что верно, два варианта :(
+
+// function ucFirst(word) {
+//   return word[0].toUpperCase() + word.substr(1);
+// }
+// let str = 'hello, kathry, how are u?';
+// let result = [];
+// let arr = str.split(' ');
+// for (i = 0; i < arr.length; i++) {
+//   result.push(ucFirst(arr[i]));
+// }
+// let newStr = result.join(' ');
+
+// console.log(newStr);
 
 // Recursion tasks 1;
+// function random(str) {
+//   let arr = str.split('');
+//   let newArr = [];
+//   for (i = 1; i < arr.length; i += 2) {
+//       newArr.push(arr[i] + arr[i - 1]);
+//   }
+
+//   return newArr.join('');
+// };
+
+//   console.log(random('123456'));
 
 // Recursion tasks 2;
 // let arr = [12, 23, 34, 45]
@@ -749,10 +787,167 @@
 // numArray(0);
 
 // Recursion tasks 3;
-// var num = 12325;
+// let num = 75236;
 // function resultSum(num) {
-//     if (num === 0) return 0;
-//     return num % 9;
+//   let sum = 0;
+//   let arr = String(num).split('');
+//   for (i = 0; i < arr.length; i++) {
+//     sum += parseInt(arr[i]);
+//   }
+  
+//   if (sum > 9) {
+//     return resultSum(sum);
+//   } else {
+//     return sum;
+//   }
+// }
+// console.log(resultSum(num));
+
+
+
+// Insertion Sort, tasks 1;
+// let str = [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3];
+// let func = qwe => {
+//   for (i = 0; i < qwe.length; i++) {
+//     let v = qwe[i], j = i - 1;
+//     while (j >= 0 && qwe[j] > v) {
+//       qwe[j + 1] = qwe[j]; j--;
+//     }
+//     qwe[j + 1] = v;
+//   }
+//   return qwe;
+// }
+// console.log(func(str));
+
+// Bubble Sort, tasks 2;
+// let str = [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3];
+// function func(qwe) {
+//   for (i = 0; i < qwe.length; i++) {
+//     for (j = 0; j < qwe.length - 1 - i; j++) {
+//       if (qwe[j + 1] < qwe[j]) {
+//         let t = qwe[j + 1]; qwe[j + 1] = qwe[j]; qwe[j] = t;
+//       }
+//     }
+//   }
+//   return qwe;
+// }
+// console.log(func(str));
+
+//Binary Sort, tasks 3;
+// const sortedArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+// const binary = (arr, target) => {
+//   let start = 0;
+//   let end = arr.length;
+//   let step = Math.floor((start + end) / 2);
+//   let steps = 0;
+
+//   for (i = 0; i < end; i++) {
+//     if (arr[step] !== target) {
+//       if (target < arr[step]) end = step;
+//       else start = step;
+//       step = Math.floor((start + end) / 2);
+//       steps++;
+//     };
+
+//     if (arr[step] === target) return `Found: ${target} in ${steps} steps`;
+//   };
+
+//   return 'Nothing Found';
+// };
+// console.log(binary(sortedArr,4));
+
+//Fibonacci_recursion, tasks 4;
+// function fib(n) {
+//   return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 // }
 
-// console.log(resultSum(num));
+// console.log(fib(3));
+// console.log(fib(7));
+// console.log(fib(77)); //залагал, больше пяти минут ждал, так и не дождался:)
+
+//Fibonacci_cicle, tasks 4;
+// function fib(n) {
+//   a = 1;
+//   b = 1;
+//   for (i = 3; i <= n; i++) {
+//     c = a + b;
+//     a = b;
+//     b = c;
+//   }
+//   return b;
+// }
+
+// console.log(fib(3));
+// console.log(fib(7));
+// console.log(fib(77));
+
+// tasks 5;
+// range = function (start, end, step = -1) {
+//   let arr = [];
+//   if (start < end) {
+//     for (i = start; i <= end; i += step)
+//       arr.push(i);
+//   } else {
+//     for (i = start; i >= end; i += step)
+//       arr.push(i);
+//   }
+//   return arr;
+// };
+// console.log(range(10, 2));
+
+// range = function (start, end, step = 1) {
+//   let arr = [];
+//   if (step > 0) {
+//     for (i = start; i <= end; i += step)
+//       arr.push(i);
+//   } else {
+//     for (i = start; i >= end; i += step)
+//       arr.push(i);
+//   }
+//   return arr;
+// };
+// console.log(range(2, 10));
+
+// range = function (start, end, step = 1) {
+//   let arr = [];
+//   let i = start;
+//   while (step > 0 ? i <= end : i >= end) {
+//     arr.push(i);
+//     i += step;
+//   }
+//   return arr;
+// };
+// console.log(range(10, 2, -2));
+
+
+//Matrix, tasks 6;
+// createMatrix = function(a, b) {}
+
+// let arr = [];
+// let a = prompt('columns');
+// let b = prompt('line');
+
+// for (i = 0 ; i < a; i++) {
+//   arr[i] = [];
+  
+//   for (j = 0; j < b; j++) {
+//     arr[i][j] = Math.floor(Math.random() * (0-100+1)) + 100
+//   }
+//   arr[i].sort(function(a, b) {return a - b})
+// }
+
+//  console.log(arr);
+
+// Algoritm, tasks 7;
+// function union() {
+//   const result = Array.from(arguments).reduce((concatArr, argument) => (concatArr.concat(argument)), []);
+//   return Array.from(new Set(result));
+// }
+// console.log(union([1, 2, 2, 3], [101, 2, 1, 10], [2, 1]));
+
+// //второй варриант
+// function union() {
+//   const result = [].concat(...Array.from(arguments));
+//   return Array.from(new Set(result));
+// }
+// console.log(union([1, 2, 2, 3], [101, 2, 1, 10], [2, 1]));
